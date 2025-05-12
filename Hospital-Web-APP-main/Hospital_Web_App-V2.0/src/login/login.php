@@ -9,7 +9,7 @@ session_start();
     <title>Giriş Yap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="/hospital-app/src/assets/css/style.css">
+    <link rel="stylesheet" href="../src/assets/css/style.css">
 </head>
 <body>
     <?php include("header.php"); ?>
@@ -25,7 +25,7 @@ session_start();
                                     <div class="text-center">
                                         <img id="logo" src="../assets/img/logo.png"
                                             style="width: 185px;" alt="logo">
-                                        <h4 class="mt-1 mb-5 pb-1">S.M.B. Sağlık Grubu</h4>
+                                        <h4 class="mt-1 mb-5 pb-1">S.M.B. Sağlık Hastanesi</h4>
                                     </div>
 
                                     <?php

@@ -12,7 +12,7 @@ include("header.php"); ?>
               <div class="card-body p-md-5 mx-md-4">
                 <div class="text-center">
                   <img id="logo" src="../assets/img/logo.png" style="width: 185px;" alt="logo">
-                  <h4 class="mt-1 mb-5 pb-1">TAKIM5 HASTANE</h4>
+                  <h4 class="mt-1 mb-5 pb-1">S.M.B. Sağlık Hastanesi</h4>
                 </div>
 
                 <?php
@@ -29,6 +29,12 @@ include("header.php"); ?>
                     echo $_SESSION['register_success'];
                     echo '</div>';
                     unset($_SESSION['register_success']);
+                    // Başarılı kayıt durumunda 3 saniye sonra login sayfasına yönlendir
+                    echo '<script>
+                        setTimeout(function() {
+                            window.location.href = "login.php";
+                        }, 3000);
+                    </script>';
                 }
                 // Form verilerini session'dan al ve temizle
                 $form_data = isset($_SESSION['form_data']) ? $_SESSION['form_data'] : [];
@@ -114,9 +120,9 @@ include("header.php"); ?>
               </div>
             </div>
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+              <div class="welcome-text px-3 py-4 p-md-5 mx-md-4">
                 <h4 class="mb-4">Hastanemize Hoşgeldiniz</h4>
-                <p class="small mb-0">Randevu almak ve randevu takibinizi yapmak, geçmiş randevularınızı görüntülemek için giriş yapınız.</p>
+                <p class="small mb-0">Hastanemizde randevu almak ve randevu takibinizi yapmak için giriş yapınız.</p>
               </div>
             </div>
           </div>

@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean
 # apt-get update ile güncellemeleri alıyoruz ve ardından gerekli paketleri kuruyoruz
 
-#RUN a2enmod rewrite
+RUN a2enmod rewrite
 # apache2'de mod_rewrite'i etkinleştiriyoruz. mod_rewrite, URL'leri yeniden yazmak için kullanılır ve genellikle SEO dostu URL'ler oluşturmak için kullanılır.
 #çok gerekli değil ama lazım olursa diye ekliyoruz
 

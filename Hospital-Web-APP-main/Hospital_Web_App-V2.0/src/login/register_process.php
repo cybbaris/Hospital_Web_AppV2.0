@@ -150,8 +150,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     unset($_SESSION['form_data']);
                     
                     // Başarılı kayıt mesajı
-                    $_SESSION['register_success'] = "Kayıt işlemi başarıyla tamamlandı! Şimdi giriş yapabilirsiniz.";
-                    header("Location: login.php");
+                    $_SESSION['register_success'] = "Kayıt işlemi başarıyla tamamlandı! 3 saniye içinde giriş sayfasına yönlendirileceksiniz.";
+                    header("Location: register.php");
                     exit();
                 } else {
                     throw new Exception("Veritabanına kayıt eklenemedi.");

@@ -21,7 +21,7 @@ $missing_fields = $_SESSION['missing_fields'];
                             <div class="card-body p-md-5 mx-md-4">
                                 <div class="text-center">
                                     <img id="logo" src="../assets/img/logo.png" style="width: 185px;" alt="logo">
-                                    <h4 class="mt-1 mb-5 pb-1">TAKIM5 HASTANE</h4>
+                                    <h4 class="mt-1 mb-5 pb-1">S.M.B. Sağlık Grubu</h4>
                                 </div>
 
                                 <form method="POST" action="update_profile.php">

@@ -19,16 +19,16 @@
       <!-- Sol taraf -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="../index.php">HASTANE</a>
+          <a class="nav-link" href="../index.php">S.M.B. Sağlık Hastanesi</a>
         </li>
       </ul>
 
       <!-- Sağ taraf -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/hospital-app/login/login.php">
-            <img src="../assets/icons/user.svg" alt="User Icon" width="24" height="24">
-          </a>
+          <span class="nav-link">
+            <img src="../assets/icons/user.png" alt="User Icon" width="32" height="32">
+          </span>
         </li>
       </ul>
     </div>

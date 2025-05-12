@@ -1,24 +1,18 @@
 <?php
 session_start();
 
-// Session'ın geçerliliğini kontrol et
-if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id']) || !isset($_SESSION['last_activity'])) {
-    session_destroy();
-    $_SESSION['error'] = "Bu sayfaya erişmek için giriş yapmalısınız!";
-    header("Location: /login/login.php");
+// Kullanıcı giriş kontrolü
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login/login.php");
     exit();
 }
 
 // Session timeout kontrolü (30 dakika)
-$timeout = 30 * 60; // 30 dakika
-if (time() - $_SESSION['last_activity'] > $timeout) {
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
     session_destroy();
-    $_SESSION['error'] = "Oturumunuz zaman aşımına uğradı. Lütfen tekrar giriş yapın.";
-    header("Location: /login/login.php");
+    header("Location: ../login/login.php?timeout=1");
     exit();
 }
-
-// Son aktivite zamanını güncelle
 $_SESSION['last_activity'] = time();
 
 // Kullanıcı bilgilerini veritabanından kontrol et

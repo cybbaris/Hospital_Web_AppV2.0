@@ -57,9 +57,9 @@
 <body>
     <div class="login-box">
         <div class="logo-container">
-            <img src="uploads/logo.png" alt="Admin Logo" class="logo-img">
+            <img src="../assets/img/logo.png" alt="Admin Logo" class="logo-img">
         </div>
-        <form method="POST" action="">
+        <form method="POST" action="login_process.php">
             <div class="mb-3">
                 <label for="username" class="form-label">Kullanıcı Adı</label>
                 <input type="text" class="form-control" id="username" name="username" required>
@@ -72,25 +72,8 @@
         </form>
 
         <?php
-        session_start();
-        require_once 'hospital_db.php';
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $username = $baglanti->real_escape_string($_POST['username']);
-            $password = $baglanti->real_escape_string($_POST['password']);
-
-            $sorgu = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-            $sonuc = $baglanti->query($sorgu);
-
-            if ($sonuc->num_rows > 0) {
-                $user = $sonuc->fetch_assoc();
-                $_SESSION['loggedin'] = true;
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['user_name'] = $user['name']; 
-                header('Location: admin.php');
-            } else {
-                echo '<p class="text-danger mt-3 text-center">Kullanıcı adı veya şifre yanlış!</p>';
-            }
+        if (isset($_GET['error'])) {
+            echo '<p class="text-danger mt-3 text-center">Kullanıcı adı veya şifre yanlış!</p>';
         }
         ?>
     </div>
