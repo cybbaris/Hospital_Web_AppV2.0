@@ -19,10 +19,17 @@ try {
 $page_title = "Hasta Yönetim Paneli";
 ob_start();
 
-//backup 
+// Log dosyasını oku (her zaman, POST isteği olmasa bile)
+$log_file = '/var/log/backup.log';
+if (file_exists($log_file)) {
+    $backup_log_content = file_get_contents($log_file);
+} else {
+    $backup_log_content = "Log dosyası bulunamadı.";
+}
+
+// Backup işlemi
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['run_backup'])) {
     $script = '/var/www/html/admin/backup.sh';
-    $log_file = '/var/log/backup.log';
 
     // Log dosyası yoksa oluştur
     if (!file_exists($log_file)) {
@@ -32,16 +39,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['run_backup'])) {
     if (file_exists($script)) {
         exec("sh $script 2>&1", $output, $status);
         $backup_result = ($status === 0) ? "Backup başarıyla alındı." : "Backup alınırken hata oluştu. Log dosyasını kontrol ediniz...";
-        $backup_result .= "<br><pre>" . htmlspecialchars(implode("\n", $output)) . "</pre>";
+        $backup_result .= htmlspecialchars(implode("\n", $output));
     } else {
         $backup_result = "Backup scripti bulunamadı: $script";
     }
 
-    // Log içeriğini oku
+    // Log içeriğini tekrar oku (backup işlemi sonrası güncellenmiş hali)
     if (file_exists($log_file)) {
         $backup_log_content = file_get_contents($log_file);
-    } else {
-        $backup_log_content = "Log dosyası bulunamadı.";
     }
 }
 
@@ -67,8 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['run_backup'])) {
         </pre>
     <?php endif; ?>
 </div>
-
-
 
 <?php
 $content = ob_get_clean();

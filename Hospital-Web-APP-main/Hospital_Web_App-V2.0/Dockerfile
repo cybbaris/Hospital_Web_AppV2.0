@@ -30,7 +30,7 @@ RUN mkdir -p /var/www/html/sql_backup && touch /var/log/backup.log && chown -R w
 EXPOSE 80
 #80 portunu açıyoruz
 
-#RUN echo "0 0 * * 0 root bash /var/www/html/admin/backup.sh" >> /etc/crontab
+RUN echo "00 10 * * 1  root /var/www/html/admin/backup.sh" >> /etc/crontab
 
 CMD ["sh", "-c", "service cron start && apachectl -D FOREGROUND"]
 # apache2'yi ve cron servisini başlatıyoruz. apachectl -D FOREGROUND komutu, Apache'yi arka planda değil, ön planda çalıştırır. Bu, Docker konteynerinin sürekli çalışmasını sağlar.
