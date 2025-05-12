@@ -1,0 +1,70 @@
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, hsl(228, 13%, 8%), #0c1314, #16131f, #1118148c);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #080e0d, #0c1d1d, #0a1629, #1d0e18);
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+#logo {
+    border-radius: 200px;
+}
+
+/* Login ve Register butonları için yeni stiller */
+.btn-login {
+    background: #0d6efd !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 35px !important;
+    border-radius: 5px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.2) !important;
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+    font-size: 1.1rem !important;
+}
+
+.btn-login:hover {
+    background: #0b5ed7 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.3) !important;
+    color: white !important;
+}
+
+/* Sağ taraftaki yazı için yeni stiller */
+.welcome-text {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-text h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.welcome-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}

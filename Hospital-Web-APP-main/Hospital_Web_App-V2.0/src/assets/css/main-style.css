@@ -1,0 +1,175 @@
+/* Logo */
+#logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-left: 10px;
+    /* 60px çok fazla olabilir, küçülttüm */
+}
+
+/* Kullanıcı Simgesi */
+#user {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    margin-right: 10px;
+    /* 60px çok fazla olabilir, küçülttüm */
+    /* background-color kaldırıldı, çünkü img etiketi kullanılıyor */
+}
+
+/* Carousel Resimleri */
+.carousel-item img {
+    width: 100%;
+    /* Tam genişlik için % kullandım */
+    height: 700px;
+    /* Sabit yükseklik korundu, ama responsive için ayarlanabilir */
+    object-fit: cover;
+    /* Resmin orantısını koruyarak kaplamasını sağlar */
+}
+
+
+
+/* Hover efektleri */
+.rounded-circle {
+    transition: transform 0.3s ease;
+}
+
+.rounded-circle:hover {
+    transform: scale(1.1);
+}
+
+.animate-hover {
+    transition: transform 0.3s ease;
+}
+
+.animate-hover:hover {
+    transform: translateY(-10px);
+}
+
+.btn-secondary {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgb(0, 100, 80);
+    transform: scale(1.05);
+}
+
+/* Dropdown */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+    display: none;
+}
+
+/* Üst menü hover ile açılma */
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+/* Submenü hover ile açılma */
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+/* Navbar item link stil */
+.nav-item a {
+    color: rgb(255, 255, 255) !important;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 10px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover efekti */
+.nav-item a:hover {
+    color: rgb(4, 112, 10) !important;
+    transform: scale(1.1);
+}
+
+/* Dropdown menü stil */
+.nav-item .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(1, 63, 50);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    min-width: 160px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Dropdown menü hover efekti */
+.nav-item:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+}
+
+/* Dropdown item stil */
+.nav-item .dropdown-menu .dropdown-item {
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    transition: background-color 0.3s ease;
+}
+
+/* Dropdown item hover efekti */
+.nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: rgb(0, 100, 80);
+    transform: scale(1.05);
+}
+
+/* Navbar container stil */
+.navbar {
+    background-color: rgb(1, 63, 50);
+    padding: 15px;
+    display: flex;
+    /* Flexbox ile hizalamayı kolaylaştırır */
+    justify-content: space-between;
+    /* Logo ve kullanıcı simgesini ayırır */
+    align-items: center;
+    /* Dikeyde ortalar */
+}
+
+/* Navbar hover animasyonu */
+.navbar:hover {
+    background-color: rgb(0, 88, 72);
+    transition: background-color 0.3s ease;
+}
+
+/* User icon stil */
+.nav-item a img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* User icon hover efekti */
+.nav-item a:hover img {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+/* Mobil cihazlar için ayarlar */
+@media (max-width: 768px) {
+    .carousel-caption {
+        display: block !important;
+        /* Mobil cihazlarda başlıklar görünsün */
+        font-size: 0.9rem;
+        /* Yazı boyutunu küçült */
+    }
+
+    .featurette-image {
+        width: 100%;
+        height: auto;
+        /* Görseller mobil ekranlara uyum sağlasın */
+    }
+}
