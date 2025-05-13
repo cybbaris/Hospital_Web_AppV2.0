@@ -29,7 +29,7 @@ if (file_exists($log_file)) {
 
 // Backup işlemi
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['run_backup'])) {
-    $script = '/var/www/html/admin/backup.sh';
+    $script = '/usr/local/bin/backup.sh';
 
     // Log dosyası yoksa oluştur
     if (!file_exists($log_file)) {
@@ -37,8 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['run_backup'])) {
     }
 
     if (file_exists($script)) {
-        exec("sh $script 2>&1", $output, $status);
-        $backup_result = ($status === 0) ? "Backup başarıyla alındı." : "Backup alınırken hata oluştu. Log dosyasını kontrol ediniz...";
+        // Backup script'ini çalıştır
+        $output = [];
+        $return_var = 0;
+        exec($script . ' 2>&1', $output, $return_var);
+        $backup_result = ($return_var === 0) ? "Backup başarıyla alındı." : "Backup alınırken hata oluştu. Log dosyasını kontrol ediniz...";
         $backup_result .= htmlspecialchars(implode("\n", $output));
     } else {
         $backup_result = "Backup scripti bulunamadı: $script";

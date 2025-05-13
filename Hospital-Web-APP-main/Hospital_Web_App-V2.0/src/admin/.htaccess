@@ -1,0 +1,70 @@
+# Dizin listelemesini kapat
+Options -Indexes
+
+# Tüm .sh dosyalarına erişimi engelle
+<FilesMatch "\.sh$">
+    Order Allow,Deny
+    Deny from all
+    Require all denied
+    ForceType text/plain
+    SetHandler default-handler
+</FilesMatch>
+
+# PHP dosyalarına erişimi kısıtla
+<FilesMatch "\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Sadece login sayfasına izin ver
+<FilesMatch "^(login|login_process)\.php$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Diğer PHP dosyalarına erişim için oturum kontrolü
+<FilesMatch "^(admin|users|backup|template|footer)\.php$">
+    Order Allow,Deny
+    Allow from all
+    # PHP ile oturum kontrolü
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} -f
+        RewriteCond %{REQUEST_FILENAME} \.php$
+        RewriteCond %{REQUEST_URI} !^/login\.php
+        RewriteCond %{REQUEST_URI} !^/login_process\.php
+        RewriteRule ^(.*)$ - [F,L]
+    </IfModule>
+</FilesMatch>
+
+# Varsayılan dosyayı ayarla
+DirectoryIndex login.php
+
+# Güvenlik başlıkları
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# Tüm .sh dosyalarını gizle ve erişimi engelle
+<Files ~ "\.sh$">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+    ForceType text/plain
+    SetHandler default-handler
+</Files>
+
+# Dizin erişimini engelle
+<DirectoryMatch "^/.*/\.sh/">
+    Order allow,deny
+    Deny from all
+</DirectoryMatch>
+
+# Rewrite kuralları
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule \.sh$ - [F,L]
+</IfModule> 

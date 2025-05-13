@@ -50,7 +50,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             margin-bottom: 40px;
         }
         .logo-img {
-            max-width: 200px; 
+            max-width: 80px; 
             width: 90%; 
             height: auto;
         }
@@ -60,7 +60,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <div class="d-flex">
         <div class="sidebar col-2">
             <div class="logo-container">
-                <img src="uploads/logo.png" alt="Admin Logo" class="logo-img">
+                <img src="../assets/icons/human.png" alt="Admin Logo" class="logo-img">
             </div>
             <a href="admin.php">Ana Sayfa</a>
             <a href="users.php">Kullanıcı Yönetimi</a>
