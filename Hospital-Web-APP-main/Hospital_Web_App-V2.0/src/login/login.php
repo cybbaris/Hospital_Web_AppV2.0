@@ -53,7 +53,6 @@ session_start();
 
                                         <div class="text-center pt-1 mb-5 pb-1">
                                             <button class="btn btn-primary btn-login" type="submit">Giriş Yap</button>
-                                            <br><a class="text-muted" href="#!">Şifremi Unuttum</a>
                                             <br><a href="register.php" class="mb-0 me-2">Hesabınız yok mu?</a>
                                         </div>
                                     </form>
