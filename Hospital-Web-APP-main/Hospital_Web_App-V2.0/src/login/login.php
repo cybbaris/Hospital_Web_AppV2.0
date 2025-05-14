@@ -59,12 +59,12 @@ session_start();
                                     </form>
                                 </div>
                             </div>
-                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                                <div class="welcome-text px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4">Hastanemize Hoşgeldiniz</h4>
-                                    <p class="small mb-0">Randevu almak ve randevu takibinizi yapmak, geçmiş randevularınızı görüntülemek için giriş yapınız.</p>
+                                <div class="col-lg-6 d-flex align-items-center gradient-custom-2 d-none d-lg-flex">
+                                    <div class="welcome-text px-3 py-4 p-md-5 mx-md-4">
+                                        <h4 class="mb-4">Hastanemize Hoşgeldiniz</h4>
+                                        <p class="small mb-0">Randevu almak ve randevu takibinizi yapmak, geçmiş randevularınızı görüntülemek için giriş yapınız.</p>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>

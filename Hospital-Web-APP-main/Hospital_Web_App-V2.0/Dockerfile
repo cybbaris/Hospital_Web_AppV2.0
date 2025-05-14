@@ -50,6 +50,7 @@ RUN chmod +x /usr/local/bin/backup.sh
 RUN chown -R www-data:www-data /var/www/html/ && chown -R www-data:www-data /var/log/backup.log
 
 # 4. Container başlatıldığında script'i düzelt
+
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 

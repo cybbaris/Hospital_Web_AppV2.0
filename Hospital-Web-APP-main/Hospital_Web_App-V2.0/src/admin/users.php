@@ -66,7 +66,7 @@ $page_title = "Kullanıcılar";
 ob_start();
 ?>
 
-<h2 class="text-center">Kullanıcı Yönetimi</h2>
+<h2 class="text-center">Admin Kullanıcı Yönetimi</h2>
 <button id="show-add-form" class="btn btn-success mb-3" <?php echo $show_add_form ? 'style="display: none;"' : ''; ?>>Yeni Kullanıcı Ekle</button>
 
 

@@ -63,7 +63,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 <img src="../assets/icons/human.png" alt="Admin Logo" class="logo-img">
             </div>
             <a href="admin.php">Ana Sayfa</a>
-            <a href="users.php">Kullanıcı Yönetimi</a>
+            <a href="users.php">Admin Kullanıcı Yönetimi</a>
             <a href="backup.php">Backup Yönetim Paneli</a>
             <a href="logout.php">Çıkış Yap</a>
         </div>
