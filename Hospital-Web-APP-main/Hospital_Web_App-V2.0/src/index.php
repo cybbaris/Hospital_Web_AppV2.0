@@ -69,7 +69,7 @@
           <p><a class="btn btn-secondary" href="#" role="button">Detaylar »</a></p>
         </div>
         <div class="col-lg-4 text-center animate-hover" data-aos="fade-up" data-aos-delay="200">
-          <img class="rounded-circle mb-3" src="assets/img/dr/kurt.png" alt="Dr. Mehmet Mermer" width="140" height="140">
+          <img class="rounded-circle mb-3" src="assets/img/dr/lion.png" alt="Dr. Mehmet Mermer" width="140" height="140">
           <h2>Dr. Mehmet Mermer</h2>
           <p><strong>Uzmanlık Alanı:</strong> Ortopedi</p>
           <p>Dr. Mermer, kemik ve eklem rahatsızlıklarında 10 yılı aşkın deneyime sahiptir.</p>

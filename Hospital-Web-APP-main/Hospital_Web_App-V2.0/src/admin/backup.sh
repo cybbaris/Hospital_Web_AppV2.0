@@ -18,8 +18,8 @@ if [ ! -d $BACKUP_DIR ]; then
 fi
 
 #backup_touch
-if [ ! -f $BACKUP_FILE ]; then
-    touch "$BACKUP_FILE"
+if [ ! -f $BACKUP_DIR/$BACKUP_FILE ]; then
+    touch "$BACKUP_DIR/$BACKUP_FILE"
 fi
 
 #backup 

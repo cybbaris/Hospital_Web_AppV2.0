@@ -36,14 +36,5 @@ açılan sayfada sql klasörü içerisinde bulunan sql tablolarımızı File Upl
 
 sayfamızı çalıştırmak için http://localhost:8080 adresine gidiyoruz. Personel Hesabı oluşturmak için sağ üstteki User-Icon'a tıklayarak yeni hesap oluşturuyoruz. Hesabımızı oluştururken kullandığınız şifreyi unutmayınız. 
 
-## Permission Denied 
-Yedekleme işlemi esnasında Permission Denied hatası alınırsa, şu şekilde bir eylem alınmalı.
-http://localhost:8080/admin sayfasına "admin:admin" olarak giriş yaptıktan sonra Yedekleme Sayfasına ulaşıyoruz ve Yedekleme Sayfasında, eğer Permission Denied hatası gelirse:
-
-```bash
-
-docker exec -it hospital_web /bin/bash
-
-```
 
 İyi çalışmalar!
