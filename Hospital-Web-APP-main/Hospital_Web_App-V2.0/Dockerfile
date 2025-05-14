@@ -52,6 +52,7 @@ RUN chown -R www-data:www-data /var/www/html/ && chown -R www-data:www-data /var
 # 4. Container başlatıldığında script'i düzelt
 
 COPY docker-entrypoint.sh /usr/local/bin/
+RUN dos2unix /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 EXPOSE 80
