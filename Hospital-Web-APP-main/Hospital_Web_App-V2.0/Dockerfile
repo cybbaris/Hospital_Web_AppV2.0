@@ -47,7 +47,7 @@ RUN dos2unix /usr/local/bin/backup.sh
 
 # 3. İzinleri ayarla
 RUN chmod +x /usr/local/bin/backup.sh
-RUN chown -R www-data:www-data /var/www/html/ && chown -R www-data:www-data /var/log/backup.log
+RUN chown -R www-data:www-data /var/www/html/admin/backup.sh && chown -R www-data:www-data /var/log/backup.log
 
 # 4. Container başlatıldığında script'i düzelt
 
