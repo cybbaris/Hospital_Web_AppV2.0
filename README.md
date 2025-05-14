@@ -46,12 +46,4 @@ docker exec -it hospital_web /bin/bash
 
 ```
 
-komutu ile hospital_web konteynırına giriyoruz. burada şu komutları sırası ile çalıştıralım,
-
-```bash
-
-chown -R www-data:www-data /var/www/html/admin/backup.sh && chown -R www-data:www-data /var/www/html/admin/sql_backup && chown -R www-data:www-data /var/log/backup.log
-
-```
-
 İyi çalışmalar!
